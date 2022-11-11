@@ -1,4 +1,4 @@
-.main-text {
+.main-form-text {
 	margin-left: 100px;
 	margin-top: 50px;
 
@@ -8,6 +8,31 @@
 .main-inner {
 	display: flex;
 	align-items: center;
+}
+
+.main-qr-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	position: relative;
+	left: 300px;
+	top: 70px;
+
+	min-width: 400px;
+	min-height: 450px;
+}
+
+.main-qr-btn {
+	width: 256px;
+
+	margin: 30px;
+	border: none;
+
+	background-color: #e0144c;
+
+	color: #ffffff;
+	font-size: 1.8rem;
 }
 
 p {

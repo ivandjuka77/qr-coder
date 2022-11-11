@@ -1,6 +1,6 @@
 form {
 	font-size: 2rem;
-	margin-left: 115px;
+	margin-left: 20px;
 
 	display: flex;
 	flex-direction: column;
@@ -19,6 +19,14 @@ form {
 	margin: 10px 0;
 }
 
-label {
-	margin-right: 15px;
+button {
+	font-family: inherit;
+	font-size: 1.6rem;
+
+	width: 130px;
+	height: 40px;
+
+	margin-top: 10px;
+
+	cursor: pointer;
 }
