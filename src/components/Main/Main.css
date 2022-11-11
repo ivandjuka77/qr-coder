@@ -1,0 +1,17 @@
+.main-text {
+	margin-left: 100px;
+	margin-top: 50px;
+
+	font-size: 1.7rem;
+}
+
+.main-inner {
+	display: flex;
+	align-items: center;
+}
+
+p {
+	font-size: 1.8rem;
+	padding-left: 20px;
+	line-height: 40px;
+}
