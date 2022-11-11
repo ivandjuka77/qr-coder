@@ -8,7 +8,7 @@ const Form = ({ getData }) => {
 
 	const data = {
 		url: url,
-		dimensions: dimensions,
+		dimensions: Number(dimensions),
 	};
 
 	const onSubmit = (e) => {
@@ -30,16 +30,12 @@ const Form = ({ getData }) => {
 			<select
 				id='dimensions'
 				onChange={(e) => setDimensions(e.target.value)}
+				defaultValue={256}
 			>
 				<option value='100'>100x100</option>
 				<option value='128'>128x128</option>
 				<option value='200'>200x200</option>
-				<option
-					value='256'
-					defaultValue
-				>
-					256x256
-				</option>
+				<option value='256'>256x256</option>
 				<option value='300'>300x300</option>
 				<option value='400'>400x400</option>
 			</select>

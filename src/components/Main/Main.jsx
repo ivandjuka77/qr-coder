@@ -62,7 +62,11 @@ const Main = () => {
 						</button>
 					</div>
 				) : (
-					''
+					<img
+						src={require('../../assets/qr-placeholder.png')}
+						alt='placeholder'
+						className='main-qr-placeholder'
+					/>
 				)}
 			</div>
 		</div>

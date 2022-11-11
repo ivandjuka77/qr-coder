@@ -24,7 +24,7 @@
 }
 
 .main-qr-btn {
-	width: 256px;
+	width: 300px;
 
 	margin: 30px;
 	border: none;
@@ -33,6 +33,12 @@
 
 	color: #ffffff;
 	font-size: 1.8rem;
+}
+
+.main-qr-placeholder {
+	position: relative;
+	left: 350px;
+	width: 300px;
 }
 
 p {
