@@ -7,11 +7,32 @@ import Form from '../Form/Form';
 import './Main.css';
 
 const Main = () => {
-	const [data, setData] = useState({});
+	const [data, setData] = useState(0);
 
 	const getData = (formData) => {
 		setData(formData);
 	};
+
+	// from https://github.com/rosskhanas/react-qr-code/blob/master/demo/src/components/App.js
+	const onImageCownload = () => {
+		const svg = document.getElementById('QRCode');
+		const svgData = new XMLSerializer().serializeToString(svg);
+		const canvas = document.createElement('canvas');
+		const ctx = canvas.getContext('2d');
+		const img = new Image();
+		img.onload = () => {
+			canvas.width = img.width;
+			canvas.height = img.height;
+			ctx.drawImage(img, 0, 0);
+			const pngFile = canvas.toDataURL('image/png');
+			const downloadLink = document.createElement('a');
+			downloadLink.download = 'QRCode';
+			downloadLink.href = `${pngFile}`;
+			downloadLink.click();
+		};
+		img.src = `data:image/svg+xml;base64,${btoa(svgData)}`;
+	};
+
 	return (
 		<div className='main'>
 			<div className='main-inner'>
@@ -25,14 +46,24 @@ const Main = () => {
 					<br />
 					<Form getData={getData} />
 				</div>
-				<div className='main-qr-div'>
-					<QRCode
-						value={data.url || ''}
-						className='main-qr'
-						size={data.dimensions || 256}
-					/>
-					<button className='main-qr-btn'>Download QR Code</button>
-				</div>
+				{data !== 0 ? (
+					<div className='main-qr-div'>
+						<QRCode
+							value={data.url || ''}
+							className='main-qr'
+							id='QRCode'
+							size={data.dimensions || 256}
+						/>
+						<button
+							className='main-qr-btn'
+							onClick={onImageCownload}
+						>
+							Download QR Code
+						</button>
+					</div>
+				) : (
+					''
+				)}
 			</div>
 		</div>
 	);
