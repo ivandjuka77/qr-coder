@@ -6,13 +6,21 @@
 	font-weight: 700;
 
 	padding: 10px 55px;
+}
 
+a {
 	display: flex;
 	align-items: center;
+
+	text-decoration: none;
+	color: inherit;
 }
 
 .nav-icon {
 	width: 35px;
 	height: 35px;
+
 	margin: 0px 15px;
+
+	cursor: pointer;
 }
