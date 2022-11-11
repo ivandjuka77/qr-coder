@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import QRCode from 'react-qr-code';
 
@@ -7,6 +7,11 @@ import Form from '../Form/Form';
 import './Main.css';
 
 const Main = () => {
+	const [data, setData] = useState({});
+
+	const getData = (formData) => {
+		setData(formData);
+	};
 	return (
 		<div className='main'>
 			<div className='main-inner'>
@@ -18,13 +23,13 @@ const Main = () => {
 						3. You can download it by clicking the button below the QR Code
 					</p>
 					<br />
-					<Form />
+					<Form getData={getData} />
 				</div>
 				<div className='main-qr-div'>
 					<QRCode
-						value='https://www.youtube.com/watch?v=qNiUlml9MDk&t=727s&ab_channel=TraversyMedia'
+						value={data.url || ''}
 						className='main-qr'
-						size={256}
+						size={data.dimensions || 256}
 					/>
 					<button className='main-qr-btn'>Download QR Code</button>
 				</div>

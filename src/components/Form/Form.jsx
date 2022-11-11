@@ -2,12 +2,22 @@ import React, { useState } from 'react';
 
 import './Form.css';
 
-const Form = () => {
+const Form = ({ getData }) => {
 	const [url, setUrl] = useState('');
-	const [dimensions, setDimensions] = useState('');
+	const [dimensions, setDimensions] = useState(0);
 
+	const data = {
+		url: url,
+		dimensions: dimensions,
+	};
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+		console.log(data);
+		getData(data);
+	};
 	return (
-		<form>
+		<form onSubmit={onSubmit}>
 			<label htmlFor='url'>URL or Text:</label>
 			<input
 				type='text'
@@ -26,7 +36,7 @@ const Form = () => {
 				<option value='200'>200x200</option>
 				<option
 					value='256'
-					selected
+					defaultValue
 				>
 					256x256
 				</option>
