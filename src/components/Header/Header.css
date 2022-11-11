@@ -1,0 +1,18 @@
+.navbar {
+	background-color: #e0144c;
+
+	color: #ffffff;
+	font-size: 3.3rem;
+	font-weight: 700;
+
+	padding: 10px 25px;
+
+	display: flex;
+	align-items: center;
+}
+
+.nav-icon {
+	width: 35px;
+	height: 35px;
+	margin: 0px 15px;
+}
