@@ -40,7 +40,7 @@ const Main = () => {
 					<h1>Generate your QR Code in seconds!</h1>
 					<p>
 						1. Put your URL/Text and the size below <br />
-						2. Viola! Your QR Code will appear on the left. <br />
+						2. Viola! Your QR Code will appear on the right. <br />
 						3. You can download it by clicking the button below the QR Code
 					</p>
 					<br />
