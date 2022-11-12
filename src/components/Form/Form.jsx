@@ -13,7 +13,6 @@ const Form = ({ getData }) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		console.log(data);
 		getData(data);
 	};
 	return (
